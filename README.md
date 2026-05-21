@@ -1,6 +1,6 @@
 # SmartNoteZ
 
-SmartNoteZ is a calm, aesthetic portfolio project for students. Students can sign up, upload notes, extract text from `.pdf`, `.txt`, and `.md` files, generate timed tests with the Gemini API, attempt the test, and view score + accuracy.
+SmartNoteZ is a calm, aesthetic portfolio project for students. Students can sign up, upload notes, extract text from `.pdf`, `.txt`, and `.md` files, generate timed tests with the Gemini/Groq/other API, attempt the test, and view score + accuracy.
 
 ## Tech stack
 
@@ -22,7 +22,7 @@ Browser extracts text using PDF.js or FileReader
 ↓
 Frontend sends text to Express backend
 ↓
-Backend sends structured prompt to Gemini
+Backend sends structured prompt to Gemini/Groq
 ↓
 Gemini returns clean JSON questions
 ↓
@@ -55,7 +55,7 @@ Open `frontend/js/config.js` and add your Supabase details:
 
 ```js
 export const SUPABASE_URL = "https://your-project.supabase.co";
-export const SUPABASE_ANON_KEY = "your-anon-key";
+export const SUPABASE_ANON_KEY = "your-public-key";
 export const API_BASE_URL = "http://localhost:8787";
 ```
 
@@ -71,14 +71,14 @@ Open `backend/.env`:
 
 ```env
 PORT=8787
-GEMINI_API_KEY=your_gemini_api_key
-GEMINI_MODEL=gemini-2.5-flash
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=llama-3.1-8b-instant
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_ANON_KEY=your-anon-key
 ALLOWED_ORIGIN=http://localhost:5500
 ```
 
-Keep `GEMINI_API_KEY` private. Never put it inside frontend JavaScript.
+Keep `GROQ_API_KEY` private. Never put it inside frontend JavaScript.
 
 ### 4. Run the project
 
@@ -110,7 +110,7 @@ http://localhost:5500
 
 ## Free usage tips
 
-- Use Gemini Flash models for lower-cost/free-tier friendly usage.
+- Use GROQ llama-3.1-8b-instant models for lower-cost/free-tier friendly usage.
 - Limit extracted notes to around 12,000 characters in the frontend.
 - Generate 5–10 questions first.
 - Do not allow unlimited quiz generations without login.
