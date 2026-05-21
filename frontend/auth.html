@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — SmartNoteZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="auth-body">
+  <div class="soft-orb orb-one"></div>
+  <div class="soft-orb orb-two"></div>
+
+  <header class="site-header glass-shell">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span>SmartNoteZ</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html" class="btn btn-small btn-ghost">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="auth-layout section-pad">
+    <section class="auth-copy reveal">
+      <p class="eyebrow">Welcome back</p>
+      <h1>Study smarter with your own notes.</h1>
+      <p>Use Supabase login to keep notes, generated tests, and attempts connected to each student account.</p>
+    </section>
+
+    <section class="auth-card glass-shell reveal delay-1" id="authCard">
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-mode="login">Login</button>
+        <button class="tab-btn" data-mode="signup">Signup</button>
+      </div>
+
+      <form id="authForm" class="form-stack">
+        <label>
+          <span>Email</span>
+          <input type="email" id="email" placeholder="student@example.com" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" id="password" placeholder="At least 6 characters" required minlength="6" />
+        </label>
+        <button class="btn btn-primary full-btn" type="submit" id="authSubmit">Login</button>
+        <p class="form-message" id="authMessage"></p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

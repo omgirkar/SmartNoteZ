@@ -1,0 +1,15 @@
+{
+  "name": "smartnotez",
+  "version": "1.0.0",
+  "description": "SmartNoteZ - AI study notes to timed tests using Gemini API, Supabase, HTML, CSS, JS and Express.",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run client\"",
+    "client": "npx http-server frontend -p 5500 -c-1",
+    "server": "npm run dev --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  }
+}

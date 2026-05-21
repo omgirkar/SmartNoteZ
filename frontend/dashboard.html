@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — SmartNoteZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="dashboard-body">
+  <div class="soft-orb orb-one"></div>
+  <div class="soft-orb orb-two"></div>
+
+  <header class="site-header glass-shell dashboard-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span>SmartNoteZ</span>
+    </a>
+    <nav class="nav-links">
+      <span class="user-chip" id="userEmail">Loading...</span>
+      <button class="btn btn-small btn-ghost" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="dashboard-shell section-pad">
+    <section class="dashboard-hero reveal">
+      <div>
+        <p class="eyebrow">Student dashboard</p>
+        <h1>Upload notes. Generate tests. Track accuracy.</h1>
+      </div>
+      <div class="quick-stats">
+        <div class="stat-card">
+          <span>Saved Tests</span>
+          <strong id="savedTestsCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Attempts</span>
+          <strong id="attemptCount">0</strong>
+        </div>
+        <div class="stat-card accent-stat">
+          <span>Best Accuracy</span>
+          <strong id="bestAccuracy">0%</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace-grid">
+      <aside class="panel glass-shell upload-panel reveal">
+        <div class="panel-title">
+          <p class="eyebrow">Step 01</p>
+          <h2>Add study material</h2>
+        </div>
+
+        <label class="upload-box" for="noteFile">
+          <input type="file" id="noteFile" accept=".pdf,.txt,.md,text/plain,application/pdf" hidden />
+          <span class="upload-icon">↥</span>
+          <strong>Upload PDF, TXT or MD</strong>
+          <small>Text is extracted in your browser before test generation.</small>
+        </label>
+
+        <label class="form-field">
+          <span>Note title</span>
+          <input type="text" id="noteTitle" placeholder="Example: Physics — Electricity" />
+        </label>
+
+        <label class="form-field">
+          <span>Extracted text preview</span>
+          <textarea id="noteText" rows="8" placeholder="Your extracted notes will appear here. You can also paste notes directly."></textarea>
+        </label>
+
+        <div class="inline-controls">
+          <label class="form-field compact-field">
+            <span>Questions</span>
+            <select id="questionCount">
+              <option value="5">5</option>
+              <option value="8" selected>8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+            </select>
+          </label>
+          <label class="form-field compact-field">
+            <span>Timer</span>
+            <select id="durationMinutes">
+              <option value="5">5 min</option>
+              <option value="10" selected>10 min</option>
+              <option value="15">15 min</option>
+              <option value="20">20 min</option>
+              <option value="30">30 min</option>
+            </select>
+          </label>
+        </div>
+
+        <button class="btn btn-primary full-btn" id="generateBtn">Generate test</button>
+        <p class="form-message" id="generatorMessage"></p>
+      </aside>
+
+      <section class="panel glass-shell test-panel reveal delay-1">
+        <div class="test-header">
+          <div>
+            <p class="eyebrow">Step 02</p>
+            <h2 id="testTitle">Your quiz will appear here</h2>
+          </div>
+          <div class="timer-pill" id="timerPill">00:00</div>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">✦</div>
+          <h3>No test generated yet</h3>
+          <p>Upload or paste notes, choose the question count, then generate a SmartNoteZ test.</p>
+        </div>
+
+        <form id="quizForm" class="quiz-form hidden"></form>
+
+        <div class="test-actions hidden" id="testActions">
+          <button class="btn btn-ghost" id="resetBtn" type="button">Reset answers</button>
+          <button class="btn btn-primary" id="submitTestBtn" type="button">Submit test</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="results-grid">
+      <article class="panel glass-shell result-panel reveal">
+        <div class="panel-title">
+          <p class="eyebrow">Step 03</p>
+          <h2>Result & accuracy</h2>
+        </div>
+        <div id="resultEmpty" class="empty-state small-empty">
+          <p>Your score will appear after submitting a test.</p>
+        </div>
+        <div id="resultContent" class="hidden">
+          <div class="result-score">
+            <strong id="scoreText">0/0</strong>
+            <span id="accuracyText">0% accuracy</span>
+          </div>
+          <canvas id="accuracyChart" height="170"></canvas>
+          <div id="reviewList" class="review-list"></div>
+        </div>
+      </article>
+
+      <article class="panel glass-shell history-panel reveal delay-1">
+        <div class="panel-title">
+          <p class="eyebrow">Saved history</p>
+          <h2>Recent tests</h2>
+        </div>
+        <div id="historyList" class="history-list">
+          <p class="muted">No saved tests yet.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

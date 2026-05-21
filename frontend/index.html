@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartNoteZ — Notes to Smart Tests</title>
+  <meta name="description" content="SmartNoteZ turns student notes into timed AI quizzes with score, accuracy and calm study analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="soft-orb orb-one"></div>
+  <div class="soft-orb orb-two"></div>
+
+  <header class="site-header glass-shell">
+    <a class="brand" href="index.html" aria-label="SmartNoteZ home">
+      <span class="brand-mark">S</span>
+      <span>SmartNoteZ</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#features">Features</a>
+      <a href="#flow">Flow</a>
+      <a href="auth.html" class="btn btn-small btn-ghost">Login</a>
+      <a href="auth.html#signup" class="btn btn-small btn-primary">Start</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">AI study workspace for students</p>
+        <h1>Turn messy notes into calm, timed tests.</h1>
+        <p class="hero-text">
+          Upload your study material, generate a focused test with Gemini, attempt it with a timer, and see your score, accuracy, and weak areas.
+        </p>
+        <div class="hero-actions">
+          <a href="auth.html#signup" class="btn btn-primary">Build my test</a>
+          <a href="#flow" class="btn btn-ghost">See how it works</a>
+        </div>
+      </div>
+
+      <div class="hero-card glass-shell reveal delay-1" aria-label="SmartNoteZ dashboard preview">
+        <div class="card-topbar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="mini-dashboard">
+          <div>
+            <p class="muted">Current note</p>
+            <h3>Biology — Chapter 1</h3>
+          </div>
+          <div class="score-ring">87%</div>
+          <div class="mini-stat sage-block">
+            <span>Questions</span>
+            <strong>10</strong>
+          </div>
+          <div class="mini-stat wine-block">
+            <span>Timer</span>
+            <strong>12:00</strong>
+          </div>
+          <div class="quiz-preview">
+            <p>Which process converts light energy into chemical energy?</p>
+            <button>Photosynthesis</button>
+            <button>Respiration</button>
+            <button>Diffusion</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section-pad compact-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What it includes</p>
+        <h2>Portfolio-worthy features, without making the UI heavy.</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <span class="icon-pill">01</span>
+          <h3>PDF & text notes</h3>
+          <p>Upload PDF, TXT, or Markdown notes and extract readable study content directly in the browser.</p>
+        </article>
+        <article class="feature-card reveal delay-1">
+          <span class="icon-pill">02</span>
+          <h3>Gemini quiz engine</h3>
+          <p>Generate clean MCQ tests from notes with easy, medium, and hard difficulty mixing.</p>
+        </article>
+        <article class="feature-card reveal delay-2">
+          <span class="icon-pill">03</span>
+          <h3>Timer + results</h3>
+          <p>Students attempt tests with a countdown timer and get score, accuracy, and explanations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="flow" class="section-pad flow-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Simple architecture</p>
+        <h2>Clean flow from notes to results.</h2>
+      </div>
+      <div class="flow-grid reveal">
+        <div class="flow-step">Login</div>
+        <div class="flow-line"></div>
+        <div class="flow-step">Upload PDF/TXT</div>
+        <div class="flow-line"></div>
+        <div class="flow-step">Generate test using AI</div>
+        <div class="flow-line"></div>
+        <div class="flow-step">Attempt + view accuracy</div>
+      </div>
+    </section>
+
+    <section class="cta-panel section-pad">
+      <div class="glass-shell cta-inner reveal">
+        <p class="eyebrow">Ready for the dashboard?</p>
+        <h2>Make your notes test-ready in minutes.</h2>
+        <a href="auth.html#signup" class="btn btn-primary">Open SmartNoteZ</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>SmartNoteZ — A portfolio project by Om Girkar</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
